@@ -36,7 +36,6 @@ def send():
     b_start["state"] = NORMAL
 
 def dib_signo():
-    valor = combo.get()
     if valor == "Suma":
         signo_suma = PhotoImage(file = "Imagenes/mas.png")
         signo_suma= Label(newWindow, image = signo_suma,bg = "#26867d").place(x = 20, y = 20)    
