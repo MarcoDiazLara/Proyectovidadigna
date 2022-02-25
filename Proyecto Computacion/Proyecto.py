@@ -1,5 +1,6 @@
 import matematicas as mat
 import memorama as mem
+import Ahorcado as Ahor
 from tkinter import *
 from tkinter import ttk
   
@@ -27,7 +28,7 @@ B_Operaciones.place(x=200 , y=400, width=170, height=70)
 B_Memorama = Button(root,text="Memorama", font = ("toms handwritten new",18), bg = "#ef7f74", command = lambda: mem.main(root))
 B_Memorama.place(x = 450,y = 400, width=130, height=70)
 #Boton multiplicacion
-B_ahorcado = Button(root, text="Ahorcado",font = ("toms handwritten new",18), bg = "#ef7f74", command= Salir)
+B_ahorcado = Button(root, text="Ahorcado",font = ("toms handwritten new",18), bg = "#ef7f74", command = lambda: Ahor.main(root))
 B_ahorcado.place(x = 650, y = 400, width=130, height=70)
 
 #Boton salida

@@ -36,15 +36,19 @@ def send():
     b_start["state"] = NORMAL
 
 def dib_signo():
+    valor = combo.get()
     if valor == "Suma":
-        signo_suma = PhotoImage(file = "Imagenes/mas.png")
-        signo_suma= Label(newWindow, image = signo_suma,bg = "#26867d").place(x = 20, y = 20)    
+        #aux1 = signo_suma.subsample(1)
+        fondo_tapa = Label(newWindow, image = tapa, bg = "#26867d").place(x = 300, y = 220)
+        fondo_suma = Label(newWindow, image = signo_suma,bg = "#26867d").place(x = 300, y = 220) 
     elif valor == "Resta":
-        a,b = valores(2)
-        print(a,b)
+        print("hola")
+        fondo_tapa = Label(newWindow, image = tapa, bg = "#26867d").place(x = 300, y = 220)
+        fondo_resta = Label(newWindow, image = signo_resta, bg = "#26867d").place(x = 300, y = 220)
     elif valor == "Multiplicacion":
-        a,b = valores(3)
-        print(a,b)
+        print("xd")
+        fondo_tapa = Label(newWindow, image = tapa, bg = "#26867d").place(x = 300, y = 220)
+        fondo_multi = Label(newWindow, image = signo_multi).place(x = 300, y = 220)
     else:
         MB.showwarning("Alerta", "Debes seleccionar una opcion valida")
 
@@ -52,10 +56,8 @@ def sel():
     valor = combo.get()
     global a,b
     if valor == "Suma":
+        dib_signo()
         a,b = valores(1)
-        print(a,b)
-        signo_suma = PhotoImage(file = "Imagenes/mas.png")
-        signo_suma= Label(newWindow, image = signo_suma,bg = "#26867d").place(x = 20, y = 20)
         aux1 = Label(newWindow,text = "     ", fg = "White", bg = "#26867d", font = ("arial",25 ) )
         aux1.place(x = 160 , y = 270)
         aux2 = Label(newWindow,text = "     ", fg = "White", bg = "#26867d", font = ("arial",25 ) )
@@ -67,10 +69,26 @@ def sel():
         
     elif valor == "Resta":
         a,b = valores(2)
-        print(a,b)
+        dib_signo()
+        aux1 = Label(newWindow,text = "     ", fg = "White", bg = "#26867d", font = ("arial",25 ) )
+        aux1.place(x = 160 , y = 270)
+        aux2 = Label(newWindow,text = "     ", fg = "White", bg = "#26867d", font = ("arial",25 ) )
+        aux2.place(x = 560 , y = 270)
+        L1S = Label(newWindow,text = str(a), fg = "White", bg = "#26867d", font = ("arial",25 ) )
+        L1S.place(x = 160 , y = 270)
+        L2S = Label(newWindow,text = str(b), fg = "White", bg = "#26867d", font = ("arial",25 ) )
+        L2S.place(x = 560 , y = 270)
     elif valor == "Multiplicacion":
+        dib_signo()
         a,b = valores(3)
-        print(a,b)
+        aux1 = Label(newWindow,text = "     ", fg = "White", bg = "#26867d", font = ("arial",25 ) )
+        aux1.place(x = 160 , y = 270)
+        aux2 = Label(newWindow,text = "     ", fg = "White", bg = "#26867d", font = ("arial",25 ) )
+        aux2.place(x = 560 , y = 270)
+        L1S = Label(newWindow,text = str(a), fg = "White", bg = "#26867d", font = ("arial",25 ) )
+        L1S.place(x = 160 , y = 270)
+        L2S = Label(newWindow,text = str(b), fg = "White", bg = "#26867d", font = ("arial",25 ) )
+        L2S.place(x = 560 , y = 270)
     else:
         MB.showwarning("Alerta", "Debes seleccionar una opcion valida")
 
@@ -82,17 +100,20 @@ def Compro():
     llave = combo.get()
     if(llave == "Suma"): 
         if (resultado == (a+b)):
-            MB.showinfo("Info","Respuesta Correcta")
+            MB.showinfo("Felicidades","Respuesta Correcta")
+            sel()
         else:
             MB.showinfo("Error","Respuesta Incorrecta")
     elif(llave == "Resta"):
         if (resultado == (a-b)):
-            MB.showinfo("Info","Respuesta Correcta")
+            MB.showinfo("Felicidades","Respuesta Correcta")
+            sel()
         else:
             MB.showinfo("Error","Respuesta Incorrecta")
     elif(llave == "Multiplicacion"):
         if (resultado == (a*b)):
-            MB.showinfo("Info","Respuesta Correcta")
+            MB.showinfo("Felicidades","Respuesta Correcta")
+            sel()
         else:
             MB.showinfo("Error","Respuesta Incorrecta")
 
@@ -100,7 +121,7 @@ def Compro():
 def pantalla_Repaso(root):
     #creacion de la nueva ventana
     
-    global newWindow, bandera
+    global newWindow, bandera, fondo_suma, valor, b_start, b_compro, combo, res, signo_suma, signo_resta, tapa, signo_multi
     bandera = 0
     newWindow = Toplevel(root)
     newWindow.geometry("1000x600")
@@ -126,7 +147,6 @@ def pantalla_Repaso(root):
     L2.place(x = 550, y = 50)
     
     #Entradas de texto
-    global valor, b_start, b_compro, combo, res
     valor = StringVar()
     entrada = Entry(newWindow, textvariable = valor)
     entrada.place(x = 50, y = 50, width=130, height=25)
@@ -136,7 +156,7 @@ def pantalla_Repaso(root):
     combo = ttk.Combobox(newWindow, values = [ "Suma", "Resta", "Multiplicacion"],state = "readonly")
     combo.place(x = 680, y = 55, width = 130, height = 25)
     #Boton para comenzar
-    b_start = Button(newWindow, text = "Comenzar",font = ("arial",15), bg = "#ef7f74", state = DISABLED, command = dib_signo)
+    b_start = Button(newWindow, text = "Comenzar",font = ("arial",15), bg = "#ef7f74", state = DISABLED, command = sel)
     b_start.place(x = 820, y = 55, width=130, height=25)
     #Boton para recibir el numero
     b_enviar = Button(newWindow, text = "Enviar",font = ("arial",15), bg = "#ef7f74", command = send)
@@ -148,6 +168,14 @@ def pantalla_Repaso(root):
     b_salir = Button(newWindow, text = "Salir",font = ("arial",18), bg = "#ef7f74", command = Salir_2)
     b_salir.place(x = 800, y = 500, width=110, height=50)
     #signo_suma = PhotoImage(file = "Imagenes/mas.png")
-    #fondo4 = Label(newWindow, image = signo_suma).place(x = 10, y = 20)    
+    #fondo4 = Label(newWindow, image = signo_suma).place(x = 10, y = 20)
+    signo_suma = PhotoImage(file = "Imagenes/mas.png")
+    signo_suma = signo_suma.subsample(2)
+    signo_resta = PhotoImage(file = "Imagenes/menos.png")
+    signo_resta = signo_resta.subsample(7)
+    tapa = PhotoImage(file = "Imagenes/tapa.png")
+    tapa = tapa.subsample(2)
+    signo_multi = PhotoImage(file = "Imagenes/multi.png")
+    
     newWindow.mainloop()
     
