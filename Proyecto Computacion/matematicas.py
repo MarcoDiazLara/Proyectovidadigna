@@ -90,8 +90,10 @@ def sel():
     else:
         MB.showwarning("Alerta", "Debes seleccionar una opcion valida")
 
-def Salir_2():
+def Salir_2(root):
+    root.deiconify()
     newWindow.destroy()
+    
     
 def Compro():
     resultado = int(res.get())
@@ -118,7 +120,7 @@ def Compro():
 
 def pantalla_Repaso(root):
     #creacion de la nueva ventana
-    
+    root.iconify()
     global newWindow, bandera, fondo_suma, valor, b_start, b_compro, combo, res, signo_suma, signo_resta, tapa, signo_multi
     bandera = 0
     newWindow = Toplevel(root)
@@ -163,7 +165,7 @@ def pantalla_Repaso(root):
     b_compro = Button(newWindow, text = "Comprobar", font = ("arial",15), bg = "#ef7f74", state = DISABLED, command = Compro)
     b_compro.place(x = 300, y = 500, width=150, height=80)
     #Boton salida
-    b_salir = Button(newWindow, text = "Salir",font = ("arial",18), bg = "#ef7f74", command = Salir_2)
+    b_salir = Button(newWindow, text = "Salir",font = ("arial",18), bg = "#ef7f74", command = lambda:Salir_2(root))
     b_salir.place(x = 800, y = 500, width=110, height=50)
     #signo_suma = PhotoImage(file = "Imagenes/mas.png")
     #fondo4 = Label(newWindow, image = signo_suma).place(x = 10, y = 20)

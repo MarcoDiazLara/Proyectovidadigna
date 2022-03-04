@@ -1,5 +1,4 @@
 from tkinter import *
-from playsound import playsound
 from tkinter import messagebox
 import random
 
@@ -22,7 +21,7 @@ class Memorama:
         self.inst.place(x = 720, y = 100)
         self.inst2 = Label(self.ventana, text = "1. Selecciona una carta\n 2. Buscar en las demas \n cartas su \"igual\"\n 3. Continuar hasta llenar \n el tablero", fg = "White", bg = "#26867d", font = ("arial",15 ))
         self.inst2.place(x = 720, y = 150)
-        self.b_salir = Button(self.ventana, text = "Salir", font = ("arial",18),bg = "#ef7f74", command = lambda: self.ventana.destroy())
+        self.b_salir = Button(self.ventana, text = "Salir", font = ("arial",18),bg = "#ef7f74", command = lambda: [self.ventana.destroy(),ven.deiconify()])
         self.b_salir.place(x = 800, y = 500, width=110, height=50)
         self.botones = []
         self.cartas = []
@@ -36,6 +35,7 @@ class Memorama:
         self.ventana.mainloop()
     
     def Salir():
+        ven.deiconify()
         ventana.destroy()
     
     def creartablero(self):
@@ -103,4 +103,5 @@ class Memorama:
 def main(newWindow):
     global ven
     ven = newWindow
+    ven.iconify()
     obj = Memorama()

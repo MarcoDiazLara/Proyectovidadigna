@@ -42,13 +42,11 @@ def dib_signo():
         fondo_tapa = Label(newWindow, image = tapa, bg = "#26867d").place(x = 300, y = 220)
         fondo_suma = Label(newWindow, image = signo_suma,bg = "#26867d").place(x = 300, y = 220) 
     elif valor == "Resta":
-        print("hola")
         fondo_tapa = Label(newWindow, image = tapa, bg = "#26867d").place(x = 300, y = 220)
         fondo_resta = Label(newWindow, image = signo_resta, bg = "#26867d").place(x = 300, y = 220)
     elif valor == "Multiplicacion":
-        print("xd")
         fondo_tapa = Label(newWindow, image = tapa, bg = "#26867d").place(x = 300, y = 220)
-        fondo_multi = Label(newWindow, image = signo_multi).place(x = 300, y = 220)
+        fondo_multi = Label(newWindow, image = signo_multi, bg = "#26867d").place(x = 300, y = 220)
     else:
         MB.showwarning("Alerta", "Debes seleccionar una opcion valida")
 
@@ -93,7 +91,10 @@ def sel():
         MB.showwarning("Alerta", "Debes seleccionar una opcion valida")
 
 def Salir_2():
+    global root
+    root.deiconify()
     newWindow.destroy()
+    
     
 def Compro():
     resultado = int(res.get())
@@ -120,7 +121,7 @@ def Compro():
 
 def pantalla_Repaso(root):
     #creacion de la nueva ventana
-    
+    root.iconify()
     global newWindow, bandera, fondo_suma, valor, b_start, b_compro, combo, res, signo_suma, signo_resta, tapa, signo_multi
     bandera = 0
     newWindow = Toplevel(root)
