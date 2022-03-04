@@ -2,21 +2,36 @@ from tkinter import *
 import random
 
 def crea_palabra():
+    global palabra, palabra_aux
     palabra = valor.get()
     entrada.delete(0,END)
     num = len(palabra)
-    aux = palabra
+    palabra_aux = palabra
     fondo_tapa = Label(ventana, image = tapa, bg = "#26867d").place(x = 400, y = 500)
     
     for i in range (1,num):
-        aux = aux.replace(aux[i], "*")
+        palabra_aux = palabra_aux.replace(palabra_aux[i], "*")
         
-    L3 = Label(ventana, text = aux, fg = "White", bg = "#26867d", font = ("arial",25 ))
+    L3 = Label(ventana, text = palabra_aux, fg = "White", bg = "#26867d", font = ("arial",25 ))
     L3.place(x = 400, y = 500)
 
 
 def Comprobar():
+    global palabra_aux
     res = letra.get()
+    aux = list(palabra)
+    aux2 = list(palabra_aux)
+    for i in range (0,len(palabra)):
+        if(aux[i] == res):
+           aux2[i] = res
+    
+    pal = "".join(aux2)
+    
+    palabra_aux = pal
+    fondo_tapa = Label(ventana, image = tapa, bg = "#26867d").place(x = 400, y = 500)
+        
+    L3 = Label(ventana, text = pal, fg = "White", bg = "#26867d", font = ("arial",25 ))
+    L3.place(x = 400, y = 500)
     
     
 
