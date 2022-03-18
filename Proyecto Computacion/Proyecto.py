@@ -12,7 +12,7 @@ def Salir():
 #Iniciacion de la interfaz grafica
 root = Tk()
 root.geometry("1000x600")
-root.title("Sin nombre")
+root.title("Software Vida Digna")
 root["bg"] = "#26867d"
 root.resizable(False,False)
 
@@ -36,3 +36,34 @@ b_salir = Button(root, text = "Salir",font = ("toms handwritten new",18), bg = "
 b_salir.place(x = 800, y = 500, width=110, height=50)
 
 root.mainloop()
+
+
+"""
+                                               .--.
+                                               `.  \
+                                                 \  \
+                                                  .  \
+                                                  :   .
+                                                  |    .
+                                                  |    :
+                                                  |    |
+  ..._  ___                                       |    |
+ `."".`''''""--..___                              |    |
+ ,-\  \             ""-...__         _____________/    |
+ / ` " '                    `""""""""                  .
+ \                                                      L
+ (>                                                      \
+/                                                         \
+\_    ___..---.                                            L
+  `--'         '.                                           \
+                 .                                           \_
+                _/`.                                           `.._
+             .'     -.                                             `.
+            /     __.-Y     /''''''-...___,...--------.._            |
+           /   _."    |    /                ' .      \   '---..._    |
+          /   /      /    /                _,. '    ,/           |   |
+          \_,'     _.'   /              /''     _,-'            _|   |
+                  '     /               `-----''               /     |
+                  `...-'                                       `...-'    
+  
+   """

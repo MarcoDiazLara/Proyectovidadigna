@@ -12,7 +12,7 @@ def Salir():
 #Iniciacion de la interfaz grafica
 root = Tk()
 root.geometry("1000x600")
-root.title("Sin nombre")
+root.title("Software Vida Digna")
 root["bg"] = "#26867d"
 root.resizable(False,False)
 

@@ -58,10 +58,11 @@ def Comprobar():
             fondo_2 = Label(ventana, image = inicio_7, bg = "#26867d").place(x = 300, y = 150)
         elif(conta == 7):
         
-            MB.showinfo("Mala Suerte","Gastaste todos tus intentos :(")
+            MB.showinfo("Mala Suerte","Gastaste todos tus intentos :(, Ingresa una nueva palabra para continuar")
             reset()
 
 def reset():
+    global conta
     fondo_inicio = Label(ventana, image = inicio, bg = "#26867d").place(x = 300, y = 150)
     fondo_tapa = Label(ventana, image = tapa, bg = "#26867d").place(x = 400, y = 500)
     b_ingre["state"] = DISABLED

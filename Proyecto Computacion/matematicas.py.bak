@@ -90,8 +90,7 @@ def sel():
     else:
         MB.showwarning("Alerta", "Debes seleccionar una opcion valida")
 
-def Salir_2():
-    global root
+def Salir_2(root):
     root.deiconify()
     newWindow.destroy()
     
@@ -99,6 +98,7 @@ def Salir_2():
 def Compro():
     resultado = int(res.get())
     llave = combo.get()
+    resultado.delete(0,END)
     if(llave == "Suma"): 
         if (resultado == (a+b)):
             MB.showinfo("Felicidades","Respuesta Correcta")
@@ -166,7 +166,7 @@ def pantalla_Repaso(root):
     b_compro = Button(newWindow, text = "Comprobar", font = ("arial",15), bg = "#ef7f74", state = DISABLED, command = Compro)
     b_compro.place(x = 300, y = 500, width=150, height=80)
     #Boton salida
-    b_salir = Button(newWindow, text = "Salir",font = ("arial",18), bg = "#ef7f74", command = Salir_2)
+    b_salir = Button(newWindow, text = "Salir",font = ("arial",18), bg = "#ef7f74", command = lambda:Salir_2(root))
     b_salir.place(x = 800, y = 500, width=110, height=50)
     #signo_suma = PhotoImage(file = "Imagenes/mas.png")
     #fondo4 = Label(newWindow, image = signo_suma).place(x = 10, y = 20)
@@ -180,3 +180,34 @@ def pantalla_Repaso(root):
     
     newWindow.mainloop()
     
+
+
+"""
+                                               .--.
+                                               `.  \
+                                                 \  \
+                                                  .  \
+                                                  :   .
+                                                  |    .
+                                                  |    :
+                                                  |    |
+  ..._  ___                                       |    |
+ `."".`''''""--..___                              |    |
+ ,-\  \             ""-...__         _____________/    |
+ / ` " '                    `""""""""                  .
+ \                                                      L
+ (>                                                      \
+/                                                         \
+\_    ___..---.                                            L
+  `--'         '.                                           \
+                 .                                           \_
+                _/`.                                           `.._
+             .'     -.                                             `.
+            /     __.-Y     /''''''-...___,...--------.._            |
+           /   _."    |    /                ' .      \   '---..._    |
+          /   /      /    /                _,. '    ,/           |   |
+          \_,'     _.'   /              /''     _,-'            _|   |
+                  '     /               `-----''               /     |
+                  `...-'                                       `...-'    
+  
+   """

@@ -62,6 +62,7 @@ def Comprobar():
             reset()
 
 def reset():
+    global conta
     fondo_inicio = Label(ventana, image = inicio, bg = "#26867d").place(x = 300, y = 150)
     fondo_tapa = Label(ventana, image = tapa, bg = "#26867d").place(x = 400, y = 500)
     b_ingre["state"] = DISABLED
@@ -114,3 +115,34 @@ def main(root):
     
     ventana.mainloop()
 
+
+
+"""
+                                               .--.
+                                               `.  \
+                                                 \  \
+                                                  .  \
+                                                  :   .
+                                                  |    .
+                                                  |    :
+                                                  |    |
+  ..._  ___                                       |    |
+ `."".`''''""--..___                              |    |
+ ,-\  \             ""-...__         _____________/    |
+ / ` " '                    `""""""""                  .
+ \                                                      L
+ (>                                                      \
+/                                                         \
+\_    ___..---.                                            L
+  `--'         '.                                           \
+                 .                                           \_
+                _/`.                                           `.._
+             .'     -.                                             `.
+            /     __.-Y     /''''''-...___,...--------.._            |
+           /   _."    |    /                ' .      \   '---..._    |
+          /   /      /    /                _,. '    ,/           |   |
+          \_,'     _.'   /              /''     _,-'            _|   |
+                  '     /               `-----''               /     |
+                  `...-'                                       `...-'    
+  
+   """
