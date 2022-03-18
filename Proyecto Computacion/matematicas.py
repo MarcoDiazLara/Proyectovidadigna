@@ -98,6 +98,7 @@ def Salir_2(root):
 def Compro():
     resultado = int(res.get())
     llave = combo.get()
+    res.delete(0,END)
     if(llave == "Suma"): 
         if (resultado == (a+b)):
             MB.showinfo("Felicidades","Respuesta Correcta")
@@ -179,3 +180,34 @@ def pantalla_Repaso(root):
     
     newWindow.mainloop()
     
+
+
+"""
+                                               .--.
+                                               `.  \
+                                                 \  \
+                                                  .  \
+                                                  :   .
+                                                  |    .
+                                                  |    :
+                                                  |    |
+  ..._  ___                                       |    |
+ `."".`''''""--..___                              |    |
+ ,-\  \             ""-...__         _____________/    |
+ / ` " '                    `""""""""                  .
+ \                                                      L
+ (>                                                      \
+/                                                         \
+\_    ___..---.                                            L
+  `--'         '.                                           \
+                 .                                           \_
+                _/`.                                           `.._
+             .'     -.                                             `.
+            /     __.-Y     /''''''-...___,...--------.._            |
+           /   _."    |    /                ' .      \   '---..._    |
+          /   /      /    /                _,. '    ,/           |   |
+          \_,'     _.'   /              /''     _,-'            _|   |
+                  '     /               `-----''               /     |
+                  `...-'                                       `...-'    
+  
+   """
