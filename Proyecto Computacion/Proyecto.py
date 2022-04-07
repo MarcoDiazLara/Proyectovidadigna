@@ -18,7 +18,8 @@ root.resizable(False,False)
 
 #Colocacion del logo
 imagen = PhotoImage(file = "Imagenes/Logo.png")
-fondo = Label(root, image = imagen, bg = "#26867d" ).place(x = 400, y = 200)
+#imagen = imagen.subsample(2)
+fondo = Label(root, image = imagen, bg = "#26867d" ).place(x = 200, y = 50)
 
 
 #Creacion de los botones para seleccionar el tipo de operacion a realizar

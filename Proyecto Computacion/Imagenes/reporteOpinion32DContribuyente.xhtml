@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><link type="text/css" rel="stylesheet" href="/PTSC/RFC/COBReporteOpinionR32dLoginRFC/javax.faces.resource/theme.css.xhtml?ln=primefaces-aristo" /><link type="text/css" rel="stylesheet" href="/PTSC/RFC/COBReporteOpinionR32dLoginRFC/javax.faces.resource/primefaces.css.xhtml?ln=primefaces" /><script type="text/javascript" src="/PTSC/RFC/COBReporteOpinionR32dLoginRFC/javax.faces.resource/jquery/jquery.js.xhtml?ln=primefaces"></script><script type="text/javascript" src="/PTSC/RFC/COBReporteOpinionR32dLoginRFC/javax.faces.resource/primefaces.js.xhtml?ln=primefaces"></script>
+	<title>Reporte de Opinión 32-D</title>
+	<script type="text/javascript" language="javascript">
+		$(document).ready(
+				function() {
+					setTimeout(clickButton, 2000);
+					function clickButton() {
+						document.getElementById(
+								"ReporteOpinionForm:botonConsultar").click();
+					}
+				});
+	</script>
+	<!-- <script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script> -->
+	<!-- <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet"> </link> --></head><body>
+	<div id="form" align="center">
+<form id="ReporteOpinionForm" name="ReporteOpinionForm" method="post" action="/PTSC/RFC/COBReporteOpinionR32dLoginRFC/reporteOpinion32DContribuyente.xhtml" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="ReporteOpinionForm" value="ReporteOpinionForm" />
+<input type="hidden" name="ReporteOpinionForm:j_idt6_CSRFToken" value="08000907070b0b0f040b0b0d04000f070a080609" />
+			<input type="hidden" name="entrada" />
+			<!-- value="<%= WebUtils.getUsuarioFromSession(auxSession) %>" />-->
+			<input type="hidden" name="tipoReporte" value="32D" />
+			<input type="hidden" name="canalOpinion" value="C" />
+			<input type="hidden" name="existenDatos" value="false" />
+			<input type="hidden" name="isrfc" value="true" />
+			<table>
+<!-- 				<tr> -->
+<!-- 					<td> -->
+<!-- 						<p:dialog header="Procesando" visible="true" width="250" height="20"> -->
+<!-- 		    				<img src="images/ajax-loader-1.gif" alt="Cargando..."/> -->
+<!-- 						</p:dialog> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+				<tr>
+
+					<td width="1090"><button id="ReporteOpinionForm:envia" name="ReporteOpinionForm:envia" type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button" style="display: none;" type="submit" onclick="window.location.href='/PTSC/RFC/COBReporteOpinionR32dLoginRFC/reporteOpinion32DContribuyente.xhtml'"><span class="ui-button-text ui-c">Consultar</span></button><script id="ReporteOpinionForm:envia_s" type="text/javascript">PrimeFaces.cw('Button','widget_ReporteOpinionForm_envia',{id:'ReporteOpinionForm:envia'});</script><button id="ReporteOpinionForm:botonConsultar" name="ReporteOpinionForm:botonConsultar" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button" style="display: none;" type="submit"><span class="ui-button-text ui-c">Consultar</span></button><script id="ReporteOpinionForm:botonConsultar_s" type="text/javascript">PrimeFaces.cw('CommandButton','widget_ReporteOpinionForm_botonConsultar',{id:'ReporteOpinionForm:botonConsultar'});</script></td>
+				</tr>
+			</table><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="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" autocomplete="off" />
+</form>
+	</div></body>
+
+</html>
